@@ -24,6 +24,12 @@ onSubmit = (dispatch, e) => {
   dispatch({type: 'ADD_CONTACT', payload:
   newContact});
 
+  this.setState({
+    name: '',
+    email: '',
+    phone: ''
+  })
+
 }
 
 onChange = e => this.setState({ [e.target.name]:
