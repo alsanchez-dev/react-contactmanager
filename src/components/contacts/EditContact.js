@@ -69,7 +69,7 @@ onChange = e => this.setState({ [e.target.name]:
         const {dispatch} = value;
         return(
           <div className="card mb-3">
-            <div className="card-header">Add Contact</div>
+            <div className="card-header">Edit Contact</div>
               <div className="card-body">
                 <form onSubmit={this.onSubmit.bind(this, dispatch)}>
                   <TextInputGroup
