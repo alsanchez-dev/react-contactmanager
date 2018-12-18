@@ -3,7 +3,7 @@ import { Consumer } from '../../context';
 import TextInputGroup from '../layout/TextInputGroup';
 import axios from 'axios';
 
-class AddContact extends Component {
+class EditContact extends Component {
   state = {
     name: '',
     email: '',
@@ -44,18 +44,6 @@ onSubmit = async (dispatch, e) => {
     );
     return;
   }
-
-
-  const newContact = {
-    name,
-    email,
-    phone
-  }
-
-  const res = await axios
-    .post('https://jsonplaceholder.typicode.com/users', newContact)
-
-    dispatch({type: 'ADD_CONTACT', payload: res.data})
 
   // Clear State
   this.setState({
@@ -109,7 +97,7 @@ onChange = e => this.setState({ [e.target.name]:
                   onChange={this.onChange}
                   error={errors.phone}
                 />
-                <input type="submit" value="Add Contact"
+                <input type="submit" value="Update Contact"
                   className="btn btn-light btn-block"/>
                 </form>
               </div>
@@ -123,4 +111,4 @@ onChange = e => this.setState({ [e.target.name]:
   }
 }
 
-export default AddContact;
+export default EditContact;

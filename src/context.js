@@ -30,19 +30,16 @@ export class Provider extends Component {
       reducer(state, action))
   }
 
-  componentDidMount(){
+  async componentDidMount(){
     // fetch('https://jsonplaceholder.typicode.com/users')
     //   .then(response => response.json())
     //   .then(users => this.setState({
     //     contacts: users
     //   }))
-    axios
-    .get('https://jsonplaceholder.typicode.com/users')
-    .then(res => this.setState({
-      contacts: res.data
-    }))
+    const res = await axios
+      .get('https://jsonplaceholder.typicode.com/users');
 
-
+    this.setState({ contacts: res.data });
   }
 
   render(){
